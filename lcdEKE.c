@@ -1,7 +1,7 @@
 /*
  * lcdEKE.c
  *
- *  Created on: ??þ/??þ/????
+ *  Created on: ??Ã¾/??Ã¾/????
  *      Author: El-safi
  */
 
@@ -164,9 +164,9 @@ void EKE_LCD_string(U8_t *str)
 
 void EKE_LCD_intNumASCII(U16_t Number)
 {
-  U8_t buffer[16]={0};
-  itoa(Number,buffer,10);  // 10 to convert only to numbers more 10 will print litters
-  EKE_LCD_string(buffer);
+  char buffer[16]={0};
+  itoa(Number,(char*)buffer,10);  // 10 to convert only to numbers more 10 will print litters
+  EKE_LCD_string((unsigned char *)buffer);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////
 void EKE_LCD_4BIT_Write_Init ( U8_t temp)
@@ -181,7 +181,7 @@ void EKE_LCD_4BIT_Write_Init ( U8_t temp)
 /////////////////////////////////////////////////////////////////////////////
 
 
-U8_t *ftoa(char *buffer, double d, int precision)
+char *ftoa(char *buffer, double d, int precision)
 {
 
 	long wholePart = (long) d;
