@@ -1,7 +1,7 @@
 /*
  * lcdEKE.c
  *
- *  Created on: ??þ/??þ/????
+ *  Created on: ??�/??�/????
  *      Author: El-safi
  */
 
@@ -166,7 +166,7 @@ void EKE_LCD_intNumASCII(U16_t Number)
 {
   char buffer[16]={0};
   itoa(Number,(char*)buffer,10);  // 10 to convert only to numbers more 10 will print litters
-  EKE_LCD_string((unsigned char *)buffer);
+  EKE_LCD_string((U8_t*)buffer);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////
 void EKE_LCD_4BIT_Write_Init ( U8_t temp)
@@ -233,7 +233,28 @@ char *ftoa(char *buffer, double d, int precision)
    return buffer;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////
+//Input:
+//     location: location where you want to store
+//               0,1,2,....7
+//     ptr: Pointer to pattern data
+//
+//Usage:
+//     pattern[8]={0x04,0x0E,0x0E,0x0E,0x1F,0x00,0x04,0x00};
+//     LCD_build(1,pattern);
+//
+//LCD Ports are same as discussed in previous sections
 
+void EKE_LCD_DRAW(unsigned char location, unsigned char *ptr){
+      unsigned char i;
+      if(location<8){
+          EKE_LCD_command(0x40+(location*8));
+          for(i=0;i<8;i++)
+             EKE_LCD_data(ptr[ i ]);
+     }
+      goToRowColumn(1,1);
+      EKE_LCD_data(0);
+
+}
 
 
 

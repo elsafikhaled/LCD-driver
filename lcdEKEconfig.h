@@ -1,7 +1,7 @@
 /*
  * lcdEKEconfig.h
  *
- *  Created on: ??þ/??þ/????
+ *  Created on: ??ï¿½/??ï¿½/????
  *      Author: El-safi
  */
 
@@ -15,7 +15,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdlib.h>
-#include "C:\EL-SAFI\Embedded Systems\Embedded fab\EKE   MY Dr.layers\Interfacing layer\LCD\DIO LAYER\DIO_layer.h"
+#include "DIO_layer.h"
 
 
 

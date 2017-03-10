@@ -1,13 +1,25 @@
 /*
  * lcdEKE.h
  *
- *  Created on: ??þ/??þ/????
+ *  Created on: ??ï¿½/??ï¿½/????
  *      Author: El-safi
  */
 
 #ifndef LCDEKE_H_
 #define LCDEKE_H_
 #include "lcdEKEconfig.h"
+
+void EKE_LCD_DRAW(unsigned char location, unsigned char *ptr);
+/*********************************************************************
+* Function    : void EKE_LCD_DRAW(unsigned char location, unsigned char *ptr){
+*
+* DESCRIPTION : This function used to darw symbols in GCRAM
+*
+* PARAMETERS  : unsigned char location, unsigned char *ptr.
+*
+* Return Value: Void.
+	***********************************************************************/
+
 
 void EKE_LCD_INIT(void);
 /*********************************************************************
@@ -106,7 +118,7 @@ void EKE_LCD_intNumASCII(U16_t Number);
 *
 * Return Value: Void.
 *************************************************************************/
- U8_t *ftoa(char *buffer, double d, int precision);
+ char *ftoa(char *buffer, double d, int precision);
  /*********************************************************************
  * Function    :  U8_t *ftoa(char *buffer, double d, int precision);
  *
